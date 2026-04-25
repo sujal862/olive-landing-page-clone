@@ -21,10 +21,7 @@ Open http://localhost:3000.
 - Avatar hover interaction
 
 ## Live Demo
-[Add your deployed link here]
-
-## Repository
-[Add your GitHub repo link here]
+[https://oliveclone.vercel.app/]
 
 ## Note
 Only the section specified in the assignment has been implemented.
