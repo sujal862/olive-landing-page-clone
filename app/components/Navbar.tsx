@@ -4,13 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { Logo } from "./Logo";
 
+// frontend clone : all nav links are placeholders and do not lead anywhere.. 
 const navLinks: { label: string; href: string; hasMenu?: boolean }[] = [
   { label: "Solutions", href: "#", hasMenu: true },
-  { label: "Features", href: "/#features" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "Blog", href: "/blogs", hasMenu: true },
-  { label: "Restaurants", href: "/restaurants" },
-  { label: "Food", href: "/foods", hasMenu: true },
+  { label: "Features", href: "#", hasMenu: false },
+  { label: "Pricing", href: "#", hasMenu: false },
+  { label: "Blog", href: "#", hasMenu: true },
+  { label: "Restaurants", href: "#" },
+  { label: "Food", href: "#", hasMenu: true },
 ];
 
 function ChevronDown({ className = "" }: { className?: string }) {
@@ -112,7 +113,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3 pr-1">
           <Link
-            href="/sign-in"
+            href="#"
             className="text-[#1F3824] text-[15px] font-medium px-3 py-2 hover:opacity-70 transition"
           >
             Sign in
@@ -159,7 +160,7 @@ export function Navbar() {
           ))}
           <div className="flex items-center justify-between gap-3 mt-3 pt-3 border-t border-neutral-200">
             <Link
-              href="/sign-in"
+              href="#"
               onClick={() => setMobileOpen(false)}
               className="text-[#1F3824] font-medium"
             >
