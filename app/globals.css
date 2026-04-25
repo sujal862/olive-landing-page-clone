@@ -1,0 +1,95 @@
+@import "tailwindcss" source(none);
+
+@source "../app/**/*.{ts,tsx,js,jsx}";
+
+@theme {
+  --font-sans: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-inter: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-dm: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --color-olive-bg: #f5faf6;
+  --color-olive-primary: #1f3824;
+  --color-olive-deep: #122115;
+  --color-olive-mid: #386641;
+  --color-olive-leaf: #aeb93e;
+  --color-olive-leaf-dark: #8f9838;
+  --color-olive-stem: #b47e54;
+  --color-olive-cheek: #fcc1c1;
+  --color-olive-glint: #fffa6b;
+  --color-olive-muted: #1f1f1f;
+  --color-olive-border: #e7e6e6;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: var(--color-olive-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes carousel-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-1 * var(--scroll-distance, 50%))); }
+}
+
+@keyframes phone-card-rise {
+  0% { opacity: 0; transform: translateY(60px) scale(0.985); }
+  10% { opacity: 1; transform: translateY(0) scale(1); }
+  90% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-30px) scale(0.99); }
+}
+
+/* Triangular fade peaking at horizontal center — matches oliveapp.com's
+   mask-l-from-50% + mask-r-from-50% combo. Side products fade out the
+   further they sit from the phone in either direction. */
+.fade-mask-x {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 50%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 50%,
+    transparent 100%
+  );
+}
+
+.btn-pill-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #1f3824;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  white-space: nowrap;
+}
+.btn-pill-primary:hover {
+  background: #122115;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -8px rgba(31, 56, 36, 0.45);
+}
+.btn-pill-primary:active {
+  transform: translateY(0);
+}
+
+.nav-link {
+  color: #404040;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  transition: background 0.15s ease, color 0.15s ease;
+  font-weight: 500;
+}
+.nav-link:hover {
+  background: rgba(0, 0, 0, 0.04);
+  color: #1f3824;
+}
