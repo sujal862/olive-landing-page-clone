@@ -1,7 +1,6 @@
 node_modules/
 .next/
 out/
-.scratch/
 .env*
 *.log
 .DS_Store
